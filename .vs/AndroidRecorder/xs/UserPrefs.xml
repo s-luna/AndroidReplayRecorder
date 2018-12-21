@@ -1,0 +1,21 @@
+﻿<Properties StartupConfiguration="{67B5D7E2-6FAA-4409-9FB1-EC79E730E523}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AndroidRecorder/RecordCommand.cs">
+    <Files>
+      <File FileName="AndroidRecorder/AppDelegate.cs" Line="10" Column="10" />
+      <File FileName="AndroidRecorder/ViewController.designer.cs" Line="55" Column="1" />
+      <File FileName="AndroidRecorder/ViewController.cs" Line="62" Column="51" />
+      <File FileName="AndroidRecorder/Main.cs" Line="12" Column="6" />
+      <File FileName="AndroidRecorder/Info.plist" />
+      <File FileName="AndroidRecorder/Entitlements.plist" />
+      <File FileName="AndroidRecorder/RecordCommand.cs" Line="47" Column="30" />
+      <File FileName="AndroidRecorder/RecordingManager.cs" Line="54" Column="25" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AndroidRecorder PreferredExecutionTarget="Test1" />
+</Properties>

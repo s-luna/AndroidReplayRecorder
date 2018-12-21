@@ -1,0 +1,15 @@
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/bin/Debug/AndroidRecorder.exe
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/bin/Debug/AndroidRecorder.pdb
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/partial-info.plist
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/asset-manifest.plist
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/bundle/AppIcon.icns
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/bundle/Assets.car
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/ibtool-manifests/Main.storyboardc
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/ibtool/Main.storyboardc/Info.plist
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/ibtool/Main.storyboardc/MainMenu.nib
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/ibtool/Main.storyboardc/NSWindowController-B8D-0N-5wS.nib
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/ibtool/Main.storyboardc/XfG-lQ-9wD-view-m2S-Jp-Qdl.nib
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/AndroidRecorder.csproj.CoreCompileInputs.cache
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/AndroidRecorder.exe
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/AndroidRecorder.pdb
+/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/AndroidRecorder.csprojAssemblyReference.cache

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+sleep 5
+
+# adb shell screenrecord --time-limit ${2} /sdcard/${1}.mp4
+# adb pull /sdcard/${1}.mp4
+# adb shell rm /sdcard/${1}.mp4
