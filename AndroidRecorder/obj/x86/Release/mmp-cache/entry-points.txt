@@ -1,0 +1,6 @@
+Function=xamarin_timezone_get_data
+	/Library/Frameworks/Xamarin.Mac.framework/Versions/5.2.1.15/lib/mono/Xamarin.Mac/mscorlib.dll
+Function=xamarin_find_protocol_wrapper_type
+	/Library/Frameworks/Xamarin.Mac.framework/Versions/5.2.1.15/lib/x86_64/mobile/Xamarin.Mac.dll
+Function=xamarin_get_block_descriptor
+	/Library/Frameworks/Xamarin.Mac.framework/Versions/5.2.1.15/lib/x86_64/mobile/Xamarin.Mac.dll

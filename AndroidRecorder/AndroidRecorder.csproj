@@ -79,6 +79,11 @@
     </Compile>
     <Compile Include="RecordingManager.cs" />
     <Compile Include="RecordCommand.cs" />
+    <Compile Include="ADBCommand.cs" />
+    <Compile Include="DoBashCommand.cs" />
+    <Compile Include="SequenceManager.cs" />
+    <Compile Include="LogManager.cs" />
+    <Compile Include="DataManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

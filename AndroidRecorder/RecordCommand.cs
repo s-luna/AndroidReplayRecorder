@@ -30,7 +30,6 @@ namespace AndroidRecorder
         static List<RecordingProcess> recordingProcesses = new List<RecordingProcess>();
         static CancellationTokenSource cancellationTokenSource;
 
-
         static string GetFileName()
         {
             return DateTime.Now.ToString("yyyyMMdd_HH-mm-ss") + ".mp4";

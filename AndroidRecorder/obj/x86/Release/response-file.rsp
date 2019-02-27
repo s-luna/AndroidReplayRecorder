@@ -1,0 +1,15 @@
+/verbose
+/output:/Users/luna.suzuki/Project/AndroidRecorder/AndroidRecorder/bin/Release/
+/name:AndroidRecorder
+/profile:Xamarin.Mac,Version=v2.0,Profile=Mobile
+/arch:x86_64
+--http-message-handler=HttpClientHandler
+/minos=10.12
+/linksdkonly
+/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/mscorlib.dll
+/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.Core.dll
+/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/System.dll
+/assembly:/Library/Frameworks/Xamarin.Mac.framework/Versions/Current/lib/mono/Xamarin.Mac/Xamarin.Mac.dll
+/root-assembly:/Users/luna.suzuki/Project/AndroidRecorder/AndroidRecorder/bin/Release/AndroidRecorder.exe
+/sdkroot:/Applications/Xcode.app/Contents/Developer
+--cache:/Users/luna.suzuki/Project/AndroidRecorder/AndroidRecorder/obj/x86/Release/mmp-cache

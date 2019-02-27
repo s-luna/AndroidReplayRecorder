@@ -1,5 +1,2 @@
-2018-10-12 17:15:03.049 AndroidRecorder[14480:8662909] Failed to connect (RecordButton) outlet from (ViewController) to (NSButtonCell): missing setter or instance variable
-2018-10-12 17:15:03.059 AndroidRecorder[14480:8662909] Failed to connect (SaveButton) outlet from (ViewController) to (NSButton): missing setter or instance variable
-2018-10-12 17:15:03.060 AndroidRecorder[14480:8662909] Could not connect action, target class ViewController does not respond to -SaveButton:
-bash: .pull.sh: No such file or directory
-bash: .pull.sh: No such file or directory
+2019-02-27 20:08:53.763 AndroidRecorder[85026:6810705] Failed to connect (RecordButton) outlet from (ViewController) to (NSButtonCell): missing setter or instance variable
+2019-02-27 20:08:53.764 AndroidRecorder[85026:6810705] Failed to connect (SaveButton) outlet from (ViewController) to (NSButton): missing setter or instance variable

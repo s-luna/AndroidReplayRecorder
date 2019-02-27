@@ -8,9 +8,6 @@ namespace AndroidRecorder
     public partial class ViewController : NSViewController
     {
 
-        string pid = "";
-        bool isRecording;
-
         public ViewController(IntPtr handle) : base(handle)
         {
 
@@ -34,15 +31,28 @@ namespace AndroidRecorder
 
             // Do any additional setup after loading the view.
             base.AwakeFromNib();
-            RecordButtonOutlet.Title = "hoge";
+            RecordButtonOutlet.Title = "Record";
             LogLabel.StringValue = "";
-            isRecording = false;
-            new RecordingManager(this);
+            LogManager.Instance.SetViewController(this);
+            //DataManager.Instance.Clean();
+            //new RecordingManager(this);
         }
 
-        partial void RecordButtonAsync(Foundation.NSObject sender)
+        partial void RecordButton(Foundation.NSObject sender)
         {
-            RecordButtonOutlet.Title = "fuga";
+            //AddLog(DoBashCommand.RunBashCommand("pwd").StandardOutput.ReadLine());
+            SequenceManager sequenceManager = SequenceManager.Instance;
+            if (sequenceManager.GetSequenceStatus() == SequenceManager.SequenceStatus.Idle) {
+                sequenceManager.Start();
+                RecordButtonOutlet.Title = "Stop";
+            }
+            else if (sequenceManager.GetSequenceStatus() == SequenceManager.SequenceStatus.Recording)
+            {
+                sequenceManager.Stop();
+                RecordButtonOutlet.Title = "Record";
+            }
+
+            //RecordButtonOutlet.Title = "fuga";
             //Console.WriteLine(ViewController.DoBashCommand("adb devices"));
             //LogLabel.StringValue = "";
             //LogLabel.StringValue += ViewController.DoBashCommand("echo foo\n");
@@ -53,22 +63,22 @@ namespace AndroidRecorder
             //RecordCommand.DoBashCommand("");
 
 
-            if (isRecording)
-            {
-                RecordCommand.StopRecord();
-                //RecordingManager.Instance.StopRecording();
-                isRecording = false;
-                LogLabel.StringValue += "StopRecording...";
-                RecordButtonOutlet.Title = "record";
-                AddLog("hogehoge");
-            }
-            else
-            {
-                RecordCommand.StartRecording();
-                RecordButtonOutlet.Title = "stop";
-                //RecordingManager.Instance.StartRecording(LogLabel, this);
-                isRecording = true;
-            }
+            //if (isRecording)
+            //{
+            //    RecordCommand.StopRecord();
+            //    //RecordingManager.Instance.StopRecording();
+            //    isRecording = false;
+            //    LogLabel.StringValue += "StopRecording...";
+            //    RecordButtonOutlet.Title = "record";
+            //    AddLog("hogehoge");
+            //}
+            //else
+            //{
+            //    RecordCommand.StartRecording();
+            //    RecordButtonOutlet.Title = "stop";
+            //    //RecordingManager.Instance.StartRecording(LogLabel, this);
+            //    isRecording = true;
+            //}
 
             //if (pid != "")
             //{
@@ -89,6 +99,14 @@ namespace AndroidRecorder
             //LogLabel.StringValue += ViewController.DoBashCommand("curl http://local.com:3000/users");
             //LogLabel.StringValue += ViewController.DoBashCommand("echo foo\n");
             //ViewController.DoBashCommand("adb devices");
+        }
+
+        partial void SaveButton(NSObject sender)
+        {
+            if (SequenceManager.Instance.GetSequenceStatus() == SequenceManager.SequenceStatus.Recording) {
+                SequenceManager sequenceManager = SequenceManager.Instance;
+                sequenceManager.Export();
+            }
         }
 
         public void AddLog(string text)

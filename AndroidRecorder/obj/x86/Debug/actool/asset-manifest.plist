@@ -6,9 +6,9 @@
 	<dict>
 		<key>output-files</key>
 		<array>
-			<string>/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/bundle/AppIcon.icns</string>
-			<string>/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/bundle/Assets.car</string>
-			<string>/Users/runa.suzuki/Projects/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/partial-info.plist</string>
+			<string>/Users/luna.suzuki/Project/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/bundle/AppIcon.icns</string>
+			<string>/Users/luna.suzuki/Project/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/bundle/Assets.car</string>
+			<string>/Users/luna.suzuki/Project/AndroidRecorder/AndroidRecorder/obj/x86/Debug/actool/partial-info.plist</string>
 		</array>
 	</dict>
 </dict>

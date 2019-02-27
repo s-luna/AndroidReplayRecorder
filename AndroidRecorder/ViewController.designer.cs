@@ -25,7 +25,7 @@ namespace AndroidRecorder
         partial void HogeButton(Foundation.NSObject sender);
 
         [Action("RecordButton:")]
-        partial void RecordButtonAsync(Foundation.NSObject sender);
+        partial void RecordButton(Foundation.NSObject sender);
 
         [Action("SaveButton:")]
         partial void SaveButton(Foundation.NSObject sender);
