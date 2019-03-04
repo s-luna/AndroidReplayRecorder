@@ -1,3 +1,0 @@
-2019-02-27 19:41:30.303 AndroidRecorder[83471:6723780] Failed to connect (RecordButton) outlet from (ViewController) to (NSButtonCell): missing setter or instance variable
-2019-02-27 19:41:30.304 AndroidRecorder[83471:6723780] Failed to connect (SaveButton) outlet from (ViewController) to (NSButton): missing setter or instance variable
-bash: ./getHome.sh: No such file or directory
