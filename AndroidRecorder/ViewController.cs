@@ -35,7 +35,6 @@ namespace AndroidRecorder
             LogLabel.StringValue = "";
             LogManager.Instance.SetViewController(this);
             ApplicationConfig.Instance.Initialize();
-            //new RecordingManager(this);
         }
 
         partial void RecordButton(Foundation.NSObject sender)
@@ -52,53 +51,6 @@ namespace AndroidRecorder
                 RecordButtonOutlet.Title = "Record";
             }
 
-            //RecordButtonOutlet.Title = "fuga";
-            //Console.WriteLine(ViewController.DoBashCommand("adb devices"));
-            //LogLabel.StringValue = "";
-            //LogLabel.StringValue += ViewController.DoBashCommand("echo foo\n");
-            //LogLabel.StringValue += ViewController.DoBashCommand("pwd \n");
-            //LogLabel.StringValue += ViewController.DoBashCommand("ls ../../../ \n");
-
-            //RecordCommand.DoBashCommand("bash ./init.sh");
-            //RecordCommand.DoBashCommand("");
-
-
-            //if (isRecording)
-            //{
-            //    RecordCommand.StopRecord();
-            //    //RecordingManager.Instance.StopRecording();
-            //    isRecording = false;
-            //    LogLabel.StringValue += "StopRecording...";
-            //    RecordButtonOutlet.Title = "record";
-            //    AddLog("hogehoge");
-            //}
-            //else
-            //{
-            //    RecordCommand.StartRecording();
-            //    RecordButtonOutlet.Title = "stop";
-            //    //RecordingManager.Instance.StartRecording(LogLabel, this);
-            //    isRecording = true;
-            //}
-
-            //if (pid != "")
-            //{
-
-            //    string output = ViewController.DoBashCommand($"kill {pid}");
-            //    LogLabel.StringValue += output + "\n";
-            //    pid = "";
-            //}
-            //else
-            //{
-            //    //pid = ViewController.DoBashCommand("bash ../../../loop.sh");
-            //    //LogLabel.StringValue += pid + "\n";
-            //    RecordingManager.Instance.StartRecording(LogLabel);
-            //    //LogLabel.StringValue += RecordingManager.Instance.StartRecordingAsync().Result;
-
-            //}
-
-            //LogLabel.StringValue += ViewController.DoBashCommand("curl http://local.com:3000/users");
-            //LogLabel.StringValue += ViewController.DoBashCommand("echo foo\n");
-            //ViewController.DoBashCommand("adb devices");
         }
 
         partial void SaveButton(NSObject sender)

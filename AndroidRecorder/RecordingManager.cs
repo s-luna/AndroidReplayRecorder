@@ -26,7 +26,7 @@ namespace AndroidRecorder
             Thread.Sleep(500);
             Process process = ADBCommand.PullMovie(m_fileName);
             process.WaitForExit();
-            Thread.Sleep(500);
+            //Thread.Sleep(500);
             RemoveMovie();
             DataManager.Instance.SetMovie($"{m_fileName}");
         }
@@ -71,7 +71,6 @@ namespace AndroidRecorder
         {
             ADBCommand.StopScreenRecord(m_pid);
             await Task.Run(() => PullMovie());
-            SetRecordingStatus(RecordingStatus.Stop);
         }
 
     }
