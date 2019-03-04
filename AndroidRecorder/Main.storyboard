@@ -252,6 +252,12 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="AdbPathField" destination="U5m-9I-ldk" id="EJM-Z6-Sto"/>
+                        <outlet property="CacheDirField" destination="zIy-BR-b3m" id="ObW-Ue-EhR"/>
+                        <outlet property="RecordingTimeField" destination="Cqn-2K-7eO" id="o07-xc-yJ7"/>
+                        <outlet property="SaveDirField" destination="6gX-V9-zFX" id="PF2-5p-Wwk"/>
+                    </connections>
                 </viewController>
                 <customObject id="8Jo-vh-B9o" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

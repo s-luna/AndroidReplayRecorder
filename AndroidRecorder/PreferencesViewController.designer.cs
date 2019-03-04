@@ -13,6 +13,18 @@ namespace AndroidRecorder
     partial class PreferencesViewController
     {
         [Outlet]
+        AppKit.NSTextField AdbPathField { get; set; }
+
+        [Outlet]
+        AppKit.NSTextField CacheDirField { get; set; }
+
+        [Outlet]
+        AppKit.NSTextField RecordingTimeField { get; set; }
+
+        [Outlet]
+        AppKit.NSTextField SaveDirField { get; set; }
+
+        [Outlet]
         AppKit.NSButton SaveSettingButtonOutlet { get; set; }
 
         [Action ("SaveSettingButton:")]
@@ -20,6 +32,26 @@ namespace AndroidRecorder
         
         void ReleaseDesignerOutlets ()
         {
+            if (AdbPathField != null) {
+                AdbPathField.Dispose ();
+                AdbPathField = null;
+            }
+
+            if (CacheDirField != null) {
+                CacheDirField.Dispose ();
+                CacheDirField = null;
+            }
+
+            if (SaveDirField != null) {
+                SaveDirField.Dispose ();
+                SaveDirField = null;
+            }
+
+            if (RecordingTimeField != null) {
+                RecordingTimeField.Dispose ();
+                RecordingTimeField = null;
+            }
+
             if (SaveSettingButtonOutlet != null) {
                 SaveSettingButtonOutlet.Dispose ();
                 SaveSettingButtonOutlet = null;

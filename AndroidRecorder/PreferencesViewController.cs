@@ -13,13 +13,29 @@ namespace AndroidRecorder
 		{
 		}
 
-        public override void ViewDidLoad() { 
-        
+        public override void ViewDidLoad() {
+            ApplicationConfig config = ApplicationConfig.Instance;
+            AdbPathField.StringValue = config.GetADBPath();
+            CacheDirField.StringValue = config.GetCachePath();
+            SaveDirField.StringValue = config.GetSavePath();
+            RecordingTimeField.IntValue = config.GetRecordingTime();
         }
 
         partial void SaveSettingButton(NSObject sender)
         {
             Console.WriteLine("push save setting button");
+            if (RecordingTimeField.IntValue < 10)
+            {
+                RecordingTimeField.IntValue = 10;
+            } else if(RecordingTimeField.IntValue > 180) {
+                RecordingTimeField.IntValue = 180;
+            }
+            ApplicationConfig.Instance.SaveSettings(
+                new ApplicationConfig.Settings(
+                AdbPathField.StringValue, 
+                CacheDirField.StringValue, 
+                SaveDirField.StringValue, 
+                RecordingTimeField.IntValue));
         }
 
     }
