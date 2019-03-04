@@ -34,7 +34,7 @@ namespace AndroidRecorder
             Initialize();
         }
 
-        private void Initialize()
+        public void Initialize()
         {
             if (homeDir != null) {
                 if (Directory.Exists($"{CACHE_PATH}") == false)
@@ -81,12 +81,7 @@ namespace AndroidRecorder
         public void SetMovie(string fileName)
         {
             if (isInit) {
-                string moviePath = $"./{fileName}";
-                string cacheMoviePath = $"{CACHE_PATH}/{fileName}";
-                if (File.Exists(moviePath)) {
-                    File.Move(moviePath, cacheMoviePath);
-                    cacheMovieNames.Enqueue(fileName);
-                }
+                cacheMovieNames.Enqueue(fileName);
                 while (cacheMovieNames.Count > 10)
                 {
                     DeleteCacheMovie(cacheMovieNames.Dequeue());
@@ -94,7 +89,7 @@ namespace AndroidRecorder
             }
         }
 
-        private void DeleteCacheMovie(string fileName)
+        public void DeleteCacheMovie(string fileName)
         {
             string path = $"{CACHE_PATH}/{fileName}";
             if (File.Exists(path)) {

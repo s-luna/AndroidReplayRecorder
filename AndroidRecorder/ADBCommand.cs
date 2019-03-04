@@ -13,6 +13,14 @@ namespace AndroidRecorder
             }
         }
 
+        private static string homeDir
+        {
+            get
+            {
+                return ApplicationConfig.Instance.GetHomePath();
+            }
+        }
+
         const string ANDROID_PATH = "AndroidRecorder/";
 
         private static string GetPullCommandStr (string fileName) {
@@ -43,7 +51,7 @@ namespace AndroidRecorder
         }
 
         public static Process PullMovie(string fileName) {
-            return DoBashCommand.RunADBCommanc($"pull /sdcard/{ANDROID_PATH}{fileName}");
+            return DoBashCommand.RunADBCommanc($"pull /sdcard/{ANDROID_PATH}{fileName} {homeDir}/Movies/Cache");
             //return DoBashCommand.RunBashCommand(GetPullCommandStr(fileName));
         }
 

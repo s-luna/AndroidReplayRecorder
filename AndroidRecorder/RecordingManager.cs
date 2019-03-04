@@ -71,6 +71,7 @@ namespace AndroidRecorder
         {
             ADBCommand.StopScreenRecord(m_pid);
             await Task.Run(() => PullMovie());
+            DataManager.Instance.DeleteCacheMovie(m_fileName);
         }
 
     }
