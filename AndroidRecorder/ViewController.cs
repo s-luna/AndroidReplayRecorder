@@ -35,6 +35,7 @@ namespace AndroidRecorder
             LogLabel.StringValue = "";
             LogManager.Instance.SetViewController(this);
             ApplicationConfig.Instance.Initialize();
+            DataManager.Instance.Initialize();
         }
 
         partial void RecordButton(Foundation.NSObject sender)
