@@ -3,3 +3,6 @@
 mkdir: '/sdcard/AndroidRecorder': File exists
 mkdir: '/sdcard/AndroidRecorder': File exists
 mkdir: '/sdcard/AndroidRecorder': File exists
+mkdir: '/sdcard/AndroidRecorder': File exists
+mkdir: '/sdcard/AndroidRecorder': File exists
+rm: /sdcard/AndroidRecorder/20190304_16-48-52.mp4: No such file or directory
