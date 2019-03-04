@@ -21,7 +21,7 @@ namespace AndroidRecorder
         }
 
         private string m_homeDirPath;
-        private const int m_recordigTime = 180;
+        private const int m_recordigTime = 10;
 
         public void Initialize()
         {

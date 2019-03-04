@@ -85,6 +85,10 @@
     <Compile Include="LogManager.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="ApplicationConfig.cs" />
+    <Compile Include="PreferencesViewController.cs" />
+    <Compile Include="PreferencesViewController.designer.cs">
+      <DependentUpon>PreferencesViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
