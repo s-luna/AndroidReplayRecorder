@@ -5,8 +5,14 @@ namespace AndroidRecorder
 {
     public static class ADBCommand
     {
+        private static int m_timeLimit
+        {
+            get
+            {
+                return ApplicationConfig.Instance.GetRecordingTime();
+            }
+        }
 
-        const int TIMELIMIT = 10;
         const string ANDROID_PATH = "AndroidRecorder/";
 
         private static string GetPullCommandStr (string fileName) {
@@ -15,7 +21,7 @@ namespace AndroidRecorder
 
         private static string GetRecordCommandStr (string fileName)
         {
-            return $"bash ./record.sh {TIMELIMIT.ToString()} {ANDROID_PATH}{fileName}";
+            return $"bash ./record.sh {m_timeLimit.ToString()} {ANDROID_PATH}{fileName}";
         }
 
         private static string GetRemoveCommandStr(string fileName)
@@ -37,7 +43,8 @@ namespace AndroidRecorder
         }
 
         public static Process PullMovie(string fileName) {
-            return DoBashCommand.RunBashCommand(GetPullCommandStr(fileName));
+            return DoBashCommand.RunADBCommanc($"pull /sdcard/{ANDROID_PATH}{fileName}");
+            //return DoBashCommand.RunBashCommand(GetPullCommandStr(fileName));
         }
 
         public static Process RemoveMovie(string fileName) {

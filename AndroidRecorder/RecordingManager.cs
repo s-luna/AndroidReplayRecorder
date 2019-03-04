@@ -9,17 +9,6 @@ namespace AndroidRecorder
     {
         public RecordingManager()
         {
-            m_status = RecordingStatus.None;
-        }
-
-        public enum RecordingStatus
-        {
-            None,
-            Start,
-            Recording,
-            Stop,
-            Pull,
-            Exit,
         }
 
         private static string GetFileName()
@@ -31,43 +20,13 @@ namespace AndroidRecorder
         private string m_pid;
 
         private Process m_process;
-        private RecordingStatus m_status;
-        public RecordingStatus GetRecordingStatus() { return m_status; }
-
-        private void SetRecordingStatus(RecordingStatus status)
-        {
-            // Pre change
-            switch (status)
-            {
-                case RecordingStatus.Start:
-                    break;
-                case RecordingStatus.Recording:
-                    //LogManager.Instance.OutputLog("StartRecording...");
-                    // この辺に録画終了待ち入れる...？
-                    break;
-                case RecordingStatus.Stop:
-                    // この辺に録画中断待ち入れる...？
-                    break;
-                case RecordingStatus.Pull:
-                    // Pull待ち入れる
-                    break;
-                case RecordingStatus.Exit:
-                    //LogManager.Instance.OutputLog("StopRecording...");
-                    // ガチ終了
-                    break;
-                default:
-                    break;
-            }
-            m_status = status;
-        }
 
         private void PullMovie()
         {
-            //LogManager.Instance.OutputLog("Pull Start...");
-            //Process process = ADBCommand.PullMovie(m_fileName);
+            Thread.Sleep(500);
             Process process = ADBCommand.PullMovie(m_fileName);
-            SetRecordingStatus(RecordingStatus.Pull);
             process.WaitForExit();
+            Thread.Sleep(500);
             RemoveMovie();
             DataManager.Instance.SetMovie($"{m_fileName}");
         }
@@ -86,12 +45,8 @@ namespace AndroidRecorder
         {
             m_fileName = GetFileName();
             m_process = ADBCommand.StartScreenRecord(m_fileName);
-            // pidのセットするもしかしたらProcessから取れるかも
+            // adb shell screenrecordのpidを出力するので取得する
             m_pid = m_process.StandardOutput.ReadLine();
-            //LogManager.Instance.OutputLog(m_process.StandardOutput.ReadLine());
-            //LogManager.Instance.OutputLog(m_process.StandardError.ReadLine());
-            //Task.Run(() => RecordingProcessExited(m_process));
-            SetRecordingStatus(RecordingStatus.Recording);
         }
 
         public void Interruption()
@@ -102,10 +57,9 @@ namespace AndroidRecorder
         private async void TaskInterruption()
         {
             ADBCommand.StopScreenRecord(m_pid);
-            PullMovie();
-            ADBCommand.RemoveAll();
+            await Task.Run(() => PullMovie());
+            //ADBCommand.RemoveAll();
             DataManager.Instance.Export();
-            SetRecordingStatus(RecordingStatus.Exit);
         }
 
         public void ExitRecording()
@@ -116,30 +70,8 @@ namespace AndroidRecorder
         private async void TaskExitRecording()
         {
             ADBCommand.StopScreenRecord(m_pid);
-            PullMovie();
-
+            await Task.Run(() => PullMovie());
             SetRecordingStatus(RecordingStatus.Stop);
-        }
-
-        public void GetMoviePath()
-        {
-            // ???
-        }
-
-        public void ProcessTextMethod()
-        {
-            Process process = ADBCommand.RemoveAll();
-            //process.Exited += TestExited;
-            //process.WaitForExit();
-            //TestExited(null,null);
-            LogManager.Instance.OutputLog("Command Start");
-            process.WaitForExit();
-            TestExited(null,null);
-        }
-
-        void TestExited(object sender, EventArgs e)
-        {
-            LogManager.Instance.OutputLog("Process End.");
         }
 
     }

@@ -5,7 +5,7 @@
 	<key>CFBundleName</key>
 	<string>AndroidRecorder</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.AndroidRecorder</string>
+	<string>com.aktsk.AndroidRecorder</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
@@ -28,5 +28,7 @@
 	<string>Main</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.video</string>
 </dict>
 </plist>

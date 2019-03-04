@@ -8,7 +8,13 @@ namespace AndroidRecorder
 {
     public class SequenceManager
     {
-        const int TIMELIMIT = 10;
+        private int m_timeLimit
+        {
+            get
+            {
+                return ApplicationConfig.Instance.GetRecordingTime();
+            }
+        }
         const int MILLISEC_MAGNIFICATION = 1000;
 
         private static SequenceManager ins;
@@ -104,7 +110,7 @@ namespace AndroidRecorder
 
         private async Task AsyncRecordingWait(CancellationToken token)
         {
-            await Task.Delay(TIMELIMIT * MILLISEC_MAGNIFICATION);
+            await Task.Delay(m_timeLimit * MILLISEC_MAGNIFICATION);
             if (token.IsCancellationRequested) {
                 return;
             } else
@@ -115,8 +121,8 @@ namespace AndroidRecorder
 
         private void NextLoop()
         {
-            ExitCurrentRecording();
             StartRecording();
+            ExitCurrentRecording();
         }
     }
 }

@@ -1,26 +1,31 @@
 ﻿<Properties StartupConfiguration="{67B5D7E2-6FAA-4409-9FB1-EC79E730E523}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="AndroidRecorder/DataManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AndroidRecorder/RecordingManager.cs">
     <Files>
-      <File FileName="AndroidRecorder/AppDelegate.cs" Line="24" Column="1" />
-      <File FileName="AndroidRecorder/ViewController.designer.cs" Line="15" Column="17" />
-      <File FileName="AndroidRecorder/Main.cs" Line="10" Column="1" />
-      <File FileName="AndroidRecorder/DoBashCommand.cs" Line="17" Column="1" />
-      <File FileName="AndroidRecorder/ADBCommand.cs" Line="54" Column="19" />
-      <File FileName="AndroidRecorder/SequenceManager.cs" Line="11" Column="34" />
-      <File FileName="AndroidRecorder/LogManager.cs" Line="23" Column="47" />
-      <File FileName="AndroidRecorder/DataManager.cs" Line="12" Column="16" />
-      <File FileName="AndroidRecorder/RecordingManager.cs" Line="35" Column="50" NotebookId="1" />
-      <File FileName="AndroidRecorder/RecordCommand.cs" Line="25" Column="36" NotebookId="1" />
-      <File FileName="AndroidRecorder/ViewController.cs" Line="37" Column="44" NotebookId="1" />
+      <File FileName="AndroidRecorder/DataManager.cs" Line="13" Column="50" />
+      <File FileName="AndroidRecorder/ADBCommand.cs" Line="45" Column="59" />
+      <File FileName="../../../../Library/Frameworks/Xamarin.Mac.framework/Versions/5.2.1.15/src/Xamarin.Mac/mcs/class/referencesource/mscorlib/system/runtime/exceptionservices/exceptionservicescommon.cs" Line="155" Column="1" />
+      <File FileName="AndroidRecorder/ViewController.cs" Line="39" Column="1" />
+      <File FileName="AndroidRecorder/SequenceManager.cs" Line="95" Column="40" />
+      <File FileName="AndroidRecorder/ApplicationConfig.cs" Line="25" Column="1" NotebookId="1" />
+      <File FileName="AndroidRecorder/DoBashCommand.cs" Line="27" Column="10" NotebookId="1" />
+      <File FileName="AndroidRecorder/RecordingManager.cs" Line="71" Column="27" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AndroidRecorder" expanded="True">
+            <Node name="AndroidRecorder" expanded="True">
+              <Node name="RecordingManager.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/luna.suzuki/Project/AndroidRecorder/AndroidRecorder/DataManager.cs" relfile="AndroidRecorder/DataManager.cs" line="37" column="1" />
-      <Breakpoint file="/Users/luna.suzuki/Project/AndroidRecorder/AndroidRecorder/DataManager.cs" relfile="AndroidRecorder/DataManager.cs" line="36" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.AndroidRecorder PreferredExecutionTarget="Test1" />

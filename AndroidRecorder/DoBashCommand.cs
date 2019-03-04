@@ -8,19 +8,28 @@ namespace AndroidRecorder
         public static Process RunBashCommand(string command)
         {
             Process process = new Process();
-            process.StartInfo.FileName = "/bin/sh";
+            process.StartInfo.FileName = "/bin/bash";
             process.StartInfo.Arguments = "-c \"" + command + "\" &";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.Verb = "RunAs";
             process.Start();
 
             return process;
         }
 
+        private static string m_homeDir
+        {
+            get
+            {
+                return ApplicationConfig.Instance.GetHomePath();
+            }
+        }
+
         public static Process RunADBCommanc(string command)
         {
             Process process = new Process();
-            process.StartInfo.FileName = "/Users/luna.suzuki/Library/Android/sdk/platform-tools/adb";
+            process.StartInfo.FileName = $"{m_homeDir}/Library/Android/sdk/platform-tools/adb";
             process.StartInfo.Arguments = command;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;

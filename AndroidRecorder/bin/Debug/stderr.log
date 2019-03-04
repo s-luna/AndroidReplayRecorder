@@ -1,2 +1,5 @@
-2019-02-27 20:08:53.763 AndroidRecorder[85026:6810705] Failed to connect (RecordButton) outlet from (ViewController) to (NSButtonCell): missing setter or instance variable
-2019-02-27 20:08:53.764 AndroidRecorder[85026:6810705] Failed to connect (SaveButton) outlet from (ViewController) to (NSButton): missing setter or instance variable
+2019-03-04 16:39:40.425 AndroidRecorder[65346:740805] Failed to connect (RecordButton) outlet from (ViewController) to (NSButtonCell): missing setter or instance variable
+2019-03-04 16:39:40.439 AndroidRecorder[65346:740805] Failed to connect (SaveButton) outlet from (ViewController) to (NSButton): missing setter or instance variable
+mkdir: '/sdcard/AndroidRecorder': File exists
+mkdir: '/sdcard/AndroidRecorder': File exists
+mkdir: '/sdcard/AndroidRecorder': File exists

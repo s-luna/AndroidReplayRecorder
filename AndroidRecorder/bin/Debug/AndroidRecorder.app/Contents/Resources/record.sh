@@ -7,7 +7,7 @@ source ~/.bash_profile
 fileName=${2}
 recordTime=${1}
 # mkdirはどっか同じやつ参照するようにする
-# adb shell mkdir /sdcard/AndroidRecorder
+adb shell mkdir /sdcard/AndroidRecorder
 adb shell screenrecord --time-limit ${recordTime} /sdcard/${fileName} &
 echo $!
 sleep recordTime

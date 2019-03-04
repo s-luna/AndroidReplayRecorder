@@ -84,6 +84,7 @@
     <Compile Include="SequenceManager.cs" />
     <Compile Include="LogManager.cs" />
     <Compile Include="DataManager.cs" />
+    <Compile Include="ApplicationConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
