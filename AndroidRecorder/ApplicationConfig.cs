@@ -74,6 +74,7 @@ namespace AndroidRecorder
             userDefault.SetString(settings.cacheDir, CACHE_DIR_KEY);
             userDefault.SetString(settings.saveDir, SAVE_DIR_KEY);
             userDefault.SetInt(settings.recordingTime, RECORDING_TIME_KEY);
+            RoadSettings();
         }
 
         private void RoadSettings()
