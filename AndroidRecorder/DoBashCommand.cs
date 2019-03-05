@@ -29,7 +29,7 @@ namespace AndroidRecorder
         public static Process RunADBCommanc(string command)
         {
             Process process = new Process();
-            process.StartInfo.FileName = $"{m_homeDir}/Library/Android/sdk/platform-tools/adb";
+            process.StartInfo.FileName = ApplicationConfig.Instance.GetADBPath();
             process.StartInfo.Arguments = command;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;

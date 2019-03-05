@@ -6,18 +6,18 @@ namespace AndroidRecorder
 {
     public class DataManager
     {
-        string CACHE_PATH
+        string cachePath
         {
             get
             {
-                return $"{homeDir}/Movies/Cache";
+                return ApplicationConfig.Instance.GetCachePath();
             }
         }
-        string EXPORT_PATH
+        string exportPath
         {
             get
             {
-                return $"{homeDir}/Movies/";
+                return ApplicationConfig.Instance.GetSavePath();
             }
         }
         string homeDir
@@ -30,21 +30,18 @@ namespace AndroidRecorder
 
         public DataManager()
         {
-            string getHoveDir = homeDir;
             Initialize();
         }
 
         public void Initialize()
         {
-            if (homeDir != null) {
-                if (Directory.Exists($"{CACHE_PATH}") == false)
-                {
-                    Directory.CreateDirectory($"{CACHE_PATH}");
-                }
-                cacheMovieNames = new Queue<string>();
-                Clean();
-                isInit = true;
+            if (Directory.Exists($"{cachePath}") == false)
+            {
+                Directory.CreateDirectory($"{cachePath}");
             }
+            cacheMovieNames = new Queue<string>();
+            Clean();
+            isInit = true;
         }
 
         private static DataManager ins;
@@ -52,7 +49,7 @@ namespace AndroidRecorder
         {
             get
             {
-                if(ins == null)
+                if (ins == null)
                 {
                     ins = new DataManager();
                 }
@@ -63,9 +60,9 @@ namespace AndroidRecorder
         private Queue<string> cacheMovieNames;
         private bool isInit;
 
-        private string[] GetAllCache ()
+        private string[] GetAllCache()
         {
-            return Directory.GetFiles($"{CACHE_PATH}", "*", SearchOption.AllDirectories);
+            return Directory.GetFiles($"{cachePath}", "*", SearchOption.AllDirectories);
         }
 
         public void Clean()
@@ -80,7 +77,8 @@ namespace AndroidRecorder
 
         public void SetMovie(string fileName)
         {
-            if (isInit) {
+            if (isInit)
+            {
                 cacheMovieNames.Enqueue(fileName);
                 while (cacheMovieNames.Count > 10)
                 {
@@ -91,21 +89,23 @@ namespace AndroidRecorder
 
         public void DeleteCacheMovie(string fileName)
         {
-            string path = $"{CACHE_PATH}/{fileName}";
-            if (File.Exists(path)) {
+            string path = $"{cachePath}/{fileName}";
+            if (File.Exists(path))
+            {
                 File.Delete(path);
             }
         }
 
         public void Export()
         {
-            string exportDir = $"{EXPORT_PATH}{DateTime.Now.ToString("yyyyMMdd_HH-mm-ss")}";
+            string exportDir = $"{exportPath}{DateTime.Now.ToString("yyyyMMdd_HH-mm-ss")}";
             Directory.CreateDirectory(exportDir);
             while (cacheMovieNames.Count > 0)
             {
                 string cacheMovieName = cacheMovieNames.Dequeue();
-                if (File.Exists($"{CACHE_PATH}/{cacheMovieName}")) {
-                    File.Move($"{CACHE_PATH}/{cacheMovieName}", $"{exportDir}/{cacheMovieName}");
+                if (File.Exists($"{cachePath}/{cacheMovieName}"))
+                {
+                    File.Move($"{cachePath}/{cacheMovieName}", $"{exportDir}/{cacheMovieName}");
                 }
             }
             Clean();
