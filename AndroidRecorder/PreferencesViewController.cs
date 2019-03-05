@@ -7,13 +7,15 @@ using AppKit;
 
 namespace AndroidRecorder
 {
-	public partial class PreferencesViewController : NSViewController
-	{
-		public PreferencesViewController (IntPtr handle) : base (handle)
-		{
-		}
+    public partial class PreferencesViewController : NSViewController
+    {
+        public PreferencesViewController(IntPtr handle) : base(handle)
+        {
+        }
 
-        public override void ViewDidLoad() {
+        public override void ViewDidLoad()
+        {
+            WindowManager.Instance.GetViewController().DisableButton();
             ApplicationConfig config = ApplicationConfig.Instance;
             AdbPathField.StringValue = config.GetADBPath();
             CacheDirField.StringValue = config.GetCachePath();
@@ -27,14 +29,16 @@ namespace AndroidRecorder
             if (RecordingTimeField.IntValue < 10)
             {
                 RecordingTimeField.IntValue = 10;
-            } else if(RecordingTimeField.IntValue > 180) {
+            }
+            else if (RecordingTimeField.IntValue > 180)
+            {
                 RecordingTimeField.IntValue = 180;
             }
             ApplicationConfig.Instance.SaveSettings(
                 new ApplicationConfig.Settings(
-                AdbPathField.StringValue, 
-                CacheDirField.StringValue, 
-                SaveDirField.StringValue, 
+                AdbPathField.StringValue,
+                CacheDirField.StringValue,
+                SaveDirField.StringValue,
                 RecordingTimeField.IntValue));
         }
 

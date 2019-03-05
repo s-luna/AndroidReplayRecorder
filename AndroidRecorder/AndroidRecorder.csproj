@@ -89,6 +89,7 @@
     <Compile Include="PreferencesViewController.designer.cs">
       <DependentUpon>PreferencesViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
