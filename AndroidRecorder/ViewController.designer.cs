@@ -9,46 +9,32 @@ using System.CodeDom.Compiler;
 
 namespace AndroidRecorder
 {
-    [Register("ViewController")]
-    partial class ViewController
-    {
-        [Outlet]
-        AppKit.NSTextField LogLabel { get; set; }
+	[Register ("ViewController")]
+	partial class ViewController
+	{
+		[Outlet]
+		AppKit.NSButton RecordButtonOutlet { get; set; }
 
-        [Outlet]
-        AppKit.NSButton RecordButtonOutlet { get; set; }
+		[Outlet]
+		AppKit.NSButton SaveButtonOutlet { get; set; }
 
-        [Outlet]
-        AppKit.NSButton SaveButtonOutlet { get; set; }
+		[Action ("RecordButton:")]
+		partial void RecordButton (Foundation.NSObject sender);
 
-        [Action("HogeButton:")]
-        partial void HogeButton(Foundation.NSObject sender);
+		[Action ("SaveButton:")]
+		partial void SaveButton (Foundation.NSObject sender);
+		
+		void ReleaseDesignerOutlets ()
+		{
+			if (RecordButtonOutlet != null) {
+				RecordButtonOutlet.Dispose ();
+				RecordButtonOutlet = null;
+			}
 
-        [Action("RecordButton:")]
-        partial void RecordButton(Foundation.NSObject sender);
-
-        [Action("SaveButton:")]
-        partial void SaveButton(Foundation.NSObject sender);
-
-        void ReleaseDesignerOutlets()
-        {
-            if (LogLabel != null)
-            {
-                LogLabel.Dispose();
-                LogLabel = null;
-            }
-
-            if (RecordButtonOutlet != null)
-            {
-                RecordButtonOutlet.Dispose();
-                RecordButtonOutlet = null;
-            }
-
-            if (SaveButtonOutlet != null)
-            {
-                SaveButtonOutlet.Dispose();
-                SaveButtonOutlet = null;
-            }
-        }
-    }
+			if (SaveButtonOutlet != null) {
+				SaveButtonOutlet.Dispose ();
+				SaveButtonOutlet = null;
+			}
+		}
+	}
 }

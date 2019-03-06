@@ -82,7 +82,6 @@
     <Compile Include="ADBCommand.cs" />
     <Compile Include="DoBashCommand.cs" />
     <Compile Include="SequenceManager.cs" />
-    <Compile Include="LogManager.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="ApplicationConfig.cs" />
     <Compile Include="PreferencesViewController.cs" />

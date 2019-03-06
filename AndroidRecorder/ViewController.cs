@@ -33,9 +33,7 @@ namespace AndroidRecorder
             // Do any additional setup after loading the view.
             base.AwakeFromNib();
             RecordButtonOutlet.Title = "Record";
-            LogLabel.StringValue = "";
             WindowManager.Instance.SetViewController(this);
-            LogManager.Instance.SetViewController(this);
             ApplicationConfig.Instance.Initialize();
             DataManager.Instance.Initialize();
         }
@@ -92,11 +90,6 @@ namespace AndroidRecorder
         {
             RecordButtonOutlet.Enabled = true;
             SaveButtonOutlet.Enabled = true;
-        }
-
-        public void AddLog(string text)
-        {
-            LogLabel.StringValue += text + "\n";
         }
 
     }
