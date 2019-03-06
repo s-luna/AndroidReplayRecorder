@@ -54,7 +54,7 @@ namespace AndroidRecorder
 
         public static string GetHomeDirPath ()
         {
-            Process process = DoBashCommand.RunBashCommand("bash ./getHome.sh");
+            Process process = DoBashCommand.RunBashCommand("cd ; echo $(pwd)");
             return process.StandardOutput.ReadLine();
         }
 
