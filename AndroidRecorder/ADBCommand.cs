@@ -31,27 +31,9 @@ namespace AndroidRecorder
 
         const string ANDROID_PATH = "AndroidRecorder/";
 
-        private static string GetPullCommandStr (string fileName) {
-            return $"bash ./pull.sh {ANDROID_PATH}{fileName}";
-        }
-
-        private static string GetRecordCommandStr (string fileName)
+        public static Process StartScreenRecord(string fileName)
         {
-            return $"bash ./record.sh {m_timeLimit.ToString()} {ANDROID_PATH}{fileName}";
-        }
-
-        private static string GetRemoveCommandStr(string fileName)
-        {
-            return $"bash ./remove.sh {ANDROID_PATH}{fileName}";
-        }
-
-        private static string GetRemoveAllCommanndStr() {
-            return $"bash ./removeAll.sh";
-        }
-
-        public static Process StartScreenRecord(string fileName) {
-            //return DoBashCommand.RunADBCommanc($"shell screenrecord --time-limit {TIMELIMIT} /sdcard/{ANDROID_PATH}{fileName} &");
-            return DoBashCommand.RunBashCommand(GetRecordCommandStr(fileName));
+            return DoBashCommand.RunADBCommanc($"shell screenrecord --time-limit {m_timeLimit} /sdcard/{ANDROID_PATH}{fileName} & echo $!; sleep {m_timeLimit}");
         }
 
         public static Process StopScreenRecord(string pid) {
@@ -60,15 +42,14 @@ namespace AndroidRecorder
 
         public static Process PullMovie(string fileName) {
             return DoBashCommand.RunADBCommanc($"pull /sdcard/{ANDROID_PATH}{fileName} {cachePath}");
-            //return DoBashCommand.RunBashCommand(GetPullCommandStr(fileName));
         }
 
         public static Process RemoveMovie(string fileName) {
-            return DoBashCommand.RunBashCommand(GetRemoveCommandStr(fileName));
+            return DoBashCommand.RunADBCommanc($"shell rm /sdcard/{ANDROID_PATH}{fileName}");
         }
 
         public static Process RemoveAll() {
-            return DoBashCommand.RunBashCommand(GetRemoveAllCommanndStr());
+            return DoBashCommand.RunADBCommanc($"shell rm /sdcard/{ANDROID_PATH}*");
         }
 
         public static string GetHomeDirPath ()
