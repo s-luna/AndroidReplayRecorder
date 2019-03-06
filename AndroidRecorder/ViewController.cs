@@ -67,6 +67,7 @@ namespace AndroidRecorder
 
         private void StartRecordingAction()
         {
+            DataManager.Instance.Initialize();
             sequenceManager.Start();
             RecordButtonOutlet.Title = "Stop";
         }

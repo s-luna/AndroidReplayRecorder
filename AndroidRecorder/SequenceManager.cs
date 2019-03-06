@@ -52,7 +52,6 @@ namespace AndroidRecorder
 
         public void Start()
         {
-            DataManager.Instance.Initialize();
             Initialization();
             SetSequenceStatus(SequenceStatus.Recording);
             StartRecording();
