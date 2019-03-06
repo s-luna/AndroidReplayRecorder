@@ -42,5 +42,10 @@ namespace AndroidRecorder
                 RecordingTimeField.IntValue));
         }
 
+        public override void ViewDidDisappear()
+        {
+            WindowManager.Instance.GetViewController().EnableButton();
+        }
+
     }
 }
