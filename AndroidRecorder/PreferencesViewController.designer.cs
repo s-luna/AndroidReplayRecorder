@@ -19,13 +19,22 @@ namespace AndroidRecorder
         AppKit.NSTextField CacheDirField { get; set; }
 
         [Outlet]
+        AppKit.NSTextField PullWaitTimeField { get; set; }
+
+        [Outlet]
         AppKit.NSTextField RecordingTimeField { get; set; }
+
+        [Outlet]
+        AppKit.NSButton ResetSettingButtonOutlet { get; set; }
 
         [Outlet]
         AppKit.NSTextField SaveDirField { get; set; }
 
         [Outlet]
         AppKit.NSButton SaveSettingButtonOutlet { get; set; }
+
+        [Action ("ResetSettingButton:")]
+        partial void ResetSettingButton (Foundation.NSObject sender);
 
         [Action ("SaveSettingButton:")]
         partial void SaveSettingButton (Foundation.NSObject sender);
@@ -42,19 +51,29 @@ namespace AndroidRecorder
                 CacheDirField = null;
             }
 
-            if (SaveDirField != null) {
-                SaveDirField.Dispose ();
-                SaveDirField = null;
-            }
-
             if (RecordingTimeField != null) {
                 RecordingTimeField.Dispose ();
                 RecordingTimeField = null;
             }
 
+            if (PullWaitTimeField != null) {
+                PullWaitTimeField.Dispose ();
+                PullWaitTimeField = null;
+            }
+
+            if (SaveDirField != null) {
+                SaveDirField.Dispose ();
+                SaveDirField = null;
+            }
+
             if (SaveSettingButtonOutlet != null) {
                 SaveSettingButtonOutlet.Dispose ();
                 SaveSettingButtonOutlet = null;
+            }
+
+            if (ResetSettingButtonOutlet != null) {
+                ResetSettingButtonOutlet.Dispose ();
+                ResetSettingButtonOutlet = null;
             }
         }
     }

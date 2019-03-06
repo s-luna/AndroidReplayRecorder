@@ -152,12 +152,12 @@
         <scene sceneID="EkN-Os-UiS">
             <objects>
                 <viewController id="300-th-tTe" userLabel="Preferences View Controller" customClass="PreferencesViewController" sceneMemberID="viewController">
-                    <view key="view" id="xaC-QA-R12">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                    <view key="view" autoresizesSubviews="NO" id="xaC-QA-R12">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="342"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U5m-9I-ldk" userLabel="adbPath Field">
-                                <rect key="frame" x="20" y="233" width="410" height="22"/>
+                                <rect key="frame" x="20" y="275" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="DKc-Bi-h4I">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -166,7 +166,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIy-BR-b3m" userLabel="CacheDir Field">
-                                <rect key="frame" x="20" y="172" width="410" height="22"/>
+                                <rect key="frame" x="20" y="214" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="tcT-GN-qz2">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -175,7 +175,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Snm-WL-wp6" userLabel="adbPath Label">
-                                <rect key="frame" x="18" y="263" width="58" height="17"/>
+                                <rect key="frame" x="18" y="305" width="58" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="adb Path" id="l3U-7z-EjL">
                                     <font key="font" metaFont="system"/>
@@ -184,7 +184,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8jy-XB-6ya" userLabel="CacheDir Label">
-                                <rect key="frame" x="18" y="202" width="63" height="17"/>
+                                <rect key="frame" x="18" y="244" width="63" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Cache dir" id="KqV-72-rKr">
                                     <font key="font" metaFont="system"/>
@@ -193,7 +193,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gX-V9-zFX" userLabel="SaveDir Field">
-                                <rect key="frame" x="20" y="117" width="410" height="22"/>
+                                <rect key="frame" x="20" y="159" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="sk0-zm-OFk">
                                     <font key="font" usesAppearanceFont="YES"/>
@@ -202,7 +202,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k75-Si-d5K">
-                                <rect key="frame" x="18" y="147" width="87" height="17"/>
+                                <rect key="frame" x="18" y="189" width="87" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="SaveDir Label" id="ehI-fj-J5o">
                                     <font key="font" metaFont="system"/>
@@ -211,16 +211,16 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fV5-mx-o3X" userLabel="RecordingTime Label">
-                                <rect key="frame" x="18" y="92" width="121" height="17"/>
+                                <rect key="frame" x="18" y="134" width="155" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="One recording time" id="NuB-TX-0Hw">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="One recording time (sec)" id="NuB-TX-0Hw">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cqn-2K-7eO" userLabel="RecordingTime Field">
-                                <rect key="frame" x="20" y="62" width="410" height="22"/>
+                                <rect key="frame" x="20" y="104" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="37h-wp-TRi">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="GQ4-bh-SLh"/>
@@ -229,10 +229,40 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdI-es-Tfy" userLabel="SaveSetting Button">
-                                <rect key="frame" x="14" y="13" width="422" height="32"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4JA-X3-sUn" userLabel="PullWaitTime Label">
+                                <rect key="frame" x="18" y="79" width="131" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Pull wait time (msec)" id="yVa-t5-6L1">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWL-nT-sS9" userLabel="PullWaitTime Field">
+                                <rect key="frame" x="20" y="49" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Save setting" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G2i-mV-L1a">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="f0V-C6-dMl">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="wt8-Ri-weL"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jm-UM-XuI" userLabel="SaveSetting Button">
+                                <rect key="frame" x="225" y="13" width="211" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Save setting" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QQI-wY-b57">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="SaveSettingButton:" target="300-th-tTe" id="11U-hf-e23"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kdI-es-Tfy" userLabel="ResetSetting Button">
+                                <rect key="frame" x="14" y="13" width="211" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Reset setting" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="G2i-mV-L1a" userLabel="Reset Setting">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -251,7 +281,7 @@
                 </viewController>
                 <customObject id="8Jo-vh-B9o" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480" y="242"/>
+            <point key="canvasLocation" x="480" y="263"/>
         </scene>
     </scenes>
 </document>
