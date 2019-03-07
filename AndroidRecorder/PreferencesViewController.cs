@@ -16,11 +16,7 @@ namespace AndroidRecorder
         public override void ViewDidLoad()
         {
             WindowManager.Instance.GetViewController().DisableButton();
-            ApplicationConfig config = ApplicationConfig.Instance;
-            AdbPathField.StringValue = config.GetADBPath();
-            CacheDirField.StringValue = config.GetCachePath();
-            SaveDirField.StringValue = config.GetSavePath();
-            RecordingTimeField.IntValue = config.GetRecordingTime();
+            ViewUpdate();
         }
 
         partial void SaveSettingButton(NSObject sender)
@@ -39,12 +35,30 @@ namespace AndroidRecorder
                 AdbPathField.StringValue,
                 CacheDirField.StringValue,
                 SaveDirField.StringValue,
-                RecordingTimeField.IntValue));
+                RecordingTimeField.IntValue,
+                PullWaitTimeField.IntValue));
+        }
+
+        partial void ResetSettingButton(NSObject sender)
+        {
+            ApplicationConfig.Instance.SeveDefaultSettigs();
+            ViewUpdate();
+        }
+
+        private void ViewUpdate()
+        {
+            ApplicationConfig config = ApplicationConfig.Instance;
+            AdbPathField.StringValue = config.GetADBPath();
+            CacheDirField.StringValue = config.GetCachePath();
+            SaveDirField.StringValue = config.GetSavePath();
+            RecordingTimeField.IntValue = config.GetRecordingTime();
+            PullWaitTimeField.IntValue = config.GetPullWaitTime();
         }
 
         public override void ViewDidDisappear()
         {
             WindowManager.Instance.GetViewController().EnableButton();
+            DataManager.Instance.Initialize();
         }
 
     }

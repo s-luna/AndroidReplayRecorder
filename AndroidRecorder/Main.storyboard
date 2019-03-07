@@ -267,7 +267,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="SaveSettingButton:" target="300-th-tTe" id="YEp-t8-tsP"/>
+                                    <action selector="ResetSettingButton:" target="300-th-tTe" id="jSR-l8-uA5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -275,7 +275,11 @@
                     <connections>
                         <outlet property="AdbPathField" destination="U5m-9I-ldk" id="EJM-Z6-Sto"/>
                         <outlet property="CacheDirField" destination="zIy-BR-b3m" id="ObW-Ue-EhR"/>
+                        <outlet property="PullWaitTime" destination="gWL-nT-sS9" id="Z3e-Ux-M0e"/>
+                        <outlet property="PullWaitTimeField" destination="gWL-nT-sS9" id="Kg6-gC-z4W"/>
                         <outlet property="RecordingTimeField" destination="Cqn-2K-7eO" id="o07-xc-yJ7"/>
+                        <outlet property="ResetSettigButton" destination="kdI-es-Tfy" id="5St-hZ-r2z"/>
+                        <outlet property="ResetSettingButton" destination="kdI-es-Tfy" id="nxZ-dI-1v5"/>
                         <outlet property="SaveDirField" destination="6gX-V9-zFX" id="PF2-5p-Wwk"/>
                     </connections>
                 </viewController>
