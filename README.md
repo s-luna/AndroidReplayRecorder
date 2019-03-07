@@ -1,4 +1,6 @@
 # Andoroid遡り録画ツール
+## ダウンロード
+[Releaseページ](https://github.com/aktsk/AndroidRecorder/releases/)から
 ## もくじ
 * どういうソフト？
 * 動作条件(PC)
