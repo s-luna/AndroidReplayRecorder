@@ -59,7 +59,6 @@ namespace AndroidRecorder
         {
             ADBCommand.StopScreenRecord(m_pid);
             await Task.Run(() => PullMovie());
-            //ADBCommand.RemoveAll();
             DataManager.Instance.Export();
         }
 
