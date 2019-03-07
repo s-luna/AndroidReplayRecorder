@@ -23,10 +23,11 @@ namespace AndroidRecorder
 
         private void PullMovie()
         {
-            Thread.Sleep(500);
+            // screenrecordをkillしてからファイルが動画として再生できるようになるまでラグがある
+            int waitTime = ApplicationConfig.Instance.GetPullWaitTime();
+            Thread.Sleep(waitTime);
             Process process = ADBCommand.PullMovie(m_fileName);
             process.WaitForExit();
-            //Thread.Sleep(500);
             RemoveMovie();
             DataManager.Instance.SetMovie($"{m_fileName}");
         }
