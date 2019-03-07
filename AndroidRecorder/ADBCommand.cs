@@ -31,6 +31,11 @@ namespace AndroidRecorder
 
         const string ANDROID_PATH = "AndroidRecorder/";
 
+        public static Process MakeAndroidMovieDir()
+        {
+            return DoBashCommand.RunADBCommanc($"shell mkdir /sdcard/{ANDROID_PATH}");
+        }
+
         public static Process StartScreenRecord(string fileName)
         {
             return DoBashCommand.RunADBCommanc($"shell screenrecord --time-limit {m_timeLimit} /sdcard/{ANDROID_PATH}{fileName} & echo $!; sleep {m_timeLimit}");

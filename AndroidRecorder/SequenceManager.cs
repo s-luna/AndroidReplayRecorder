@@ -53,6 +53,7 @@ namespace AndroidRecorder
         public void Start()
         {
             Initialization();
+            ADBCommand.MakeAndroidMovieDir();
             SetSequenceStatus(SequenceStatus.Recording);
             StartRecording();
         }
