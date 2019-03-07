@@ -28,6 +28,7 @@
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
@@ -43,6 +44,7 @@
     <UseRefCounting>true</UseRefCounting>
     <LinkMode>SdkOnly</LinkMode>
     <PlatformTarget>x86</PlatformTarget>
+    <AOTMode>None</AOTMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -69,6 +71,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="Module\record.sh" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -92,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\record.sh" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
