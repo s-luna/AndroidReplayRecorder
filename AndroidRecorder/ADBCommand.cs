@@ -38,7 +38,7 @@ namespace AndroidRecorder
 
         public static Process StartScreenRecord(string fileName)
         {
-            return DoBashCommand.RunADBCommanc($"shell screenrecord --time-limit {m_timeLimit} /sdcard/{ANDROID_PATH}{fileName} & echo $!; sleep {m_timeLimit}");
+            return DoBashCommand.RunBashCommand($"./record.sh {adbPath} {m_timeLimit} {ANDROID_PATH}{fileName}");
         }
 
         public static Process StopScreenRecord(string pid) {
