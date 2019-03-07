@@ -16,6 +16,7 @@ namespace AndroidRecorder
             }
         }
         const int MILLISEC_MAGNIFICATION = 1000;
+        const int RECORDING_TIME_BAFFER = 500;
 
         private static SequenceManager ins;
         public static SequenceManager Instance {
@@ -111,7 +112,7 @@ namespace AndroidRecorder
 
         private async Task AsyncRecordingWait(CancellationToken token)
         {
-            await Task.Delay(m_timeLimit * MILLISEC_MAGNIFICATION);
+            await Task.Delay(m_timeLimit * MILLISEC_MAGNIFICATION - RECORDING_TIME_BAFFER);
             if (token.IsCancellationRequested) {
                 return;
             } else
@@ -123,6 +124,7 @@ namespace AndroidRecorder
         private void NextLoop()
         {
             StartRecording();
+            Thread.Sleep(RECORDING_TIME_BAFFER);
             ExitCurrentRecording();
         }
     }
