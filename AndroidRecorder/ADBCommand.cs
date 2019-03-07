@@ -49,23 +49,27 @@ namespace AndroidRecorder
             return DoBashCommand.RunBashCommand($"./record.sh {adbPath} {m_timeLimit} {ANDROID_PATH}{fileName}");
         }
 
-        public static Process StopScreenRecord(string pid) {
+        public static Process StopScreenRecord(string pid)
+        {
             return DoBashCommand.RunBashCommand($"kill {pid}");
         }
 
-        public static Process PullMovie(string fileName) {
+        public static Process PullMovie(string fileName)
+        {
             return DoBashCommand.RunADBCommanc($"pull /sdcard/{ANDROID_PATH}{fileName} {cachePath}");
         }
 
-        public static Process RemoveMovie(string fileName) {
+        public static Process RemoveMovie(string fileName)
+        {
             return DoBashCommand.RunADBCommanc($"shell rm /sdcard/{ANDROID_PATH}{fileName}");
         }
 
-        public static Process RemoveAll() {
+        public static Process RemoveAll()
+        {
             return DoBashCommand.RunADBCommanc($"shell rm /sdcard/{ANDROID_PATH}*");
         }
 
-        public static string GetHomeDirPath ()
+        public static string GetHomeDirPath()
         {
             Process process = DoBashCommand.RunBashCommand("cd ; echo $(pwd)");
             return process.StandardOutput.ReadLine();

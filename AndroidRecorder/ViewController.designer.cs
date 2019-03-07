@@ -9,32 +9,34 @@ using System.CodeDom.Compiler;
 
 namespace AndroidRecorder
 {
-	[Register ("ViewController")]
-	partial class ViewController
-	{
-		[Outlet]
-		AppKit.NSButton RecordButtonOutlet { get; set; }
+    [Register("ViewController")]
+    partial class ViewController
+    {
+        [Outlet]
+        AppKit.NSButton RecordButtonOutlet { get; set; }
 
-		[Outlet]
-		AppKit.NSButton SaveButtonOutlet { get; set; }
+        [Outlet]
+        AppKit.NSButton SaveButtonOutlet { get; set; }
 
-		[Action ("RecordButton:")]
-		partial void RecordButton (Foundation.NSObject sender);
+        [Action("RecordButton:")]
+        partial void RecordButton(Foundation.NSObject sender);
 
-		[Action ("SaveButton:")]
-		partial void SaveButton (Foundation.NSObject sender);
-		
-		void ReleaseDesignerOutlets ()
-		{
-			if (RecordButtonOutlet != null) {
-				RecordButtonOutlet.Dispose ();
-				RecordButtonOutlet = null;
-			}
+        [Action("SaveButton:")]
+        partial void SaveButton(Foundation.NSObject sender);
 
-			if (SaveButtonOutlet != null) {
-				SaveButtonOutlet.Dispose ();
-				SaveButtonOutlet = null;
-			}
-		}
-	}
+        void ReleaseDesignerOutlets()
+        {
+            if (RecordButtonOutlet != null)
+            {
+                RecordButtonOutlet.Dispose();
+                RecordButtonOutlet = null;
+            }
+
+            if (SaveButtonOutlet != null)
+            {
+                SaveButtonOutlet.Dispose();
+                SaveButtonOutlet = null;
+            }
+        }
+    }
 }

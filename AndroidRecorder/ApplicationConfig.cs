@@ -44,7 +44,8 @@ namespace AndroidRecorder
             public string saveDir;
             public int recordingTime;
             public int pullWaitTime;
-            public Settings(string adbPath, string cacheDir, string saveDir, int recordingTime, int pullWaitTime) {
+            public Settings(string adbPath, string cacheDir, string saveDir, int recordingTime, int pullWaitTime)
+            {
                 this.adbPath = adbPath;
                 this.cacheDir = cacheDir;
                 this.saveDir = saveDir;

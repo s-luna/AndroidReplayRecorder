@@ -38,5 +38,5 @@ namespace AndroidRecorder
             return process;
         }
 
-}
+    }
 }

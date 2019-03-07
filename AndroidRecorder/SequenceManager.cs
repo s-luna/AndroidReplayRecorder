@@ -19,16 +19,20 @@ namespace AndroidRecorder
         const int RECORDING_TIME_BAFFER = 500;
 
         private static SequenceManager ins;
-        public static SequenceManager Instance {
-            get {
-                if (ins == null) {
+        public static SequenceManager Instance
+        {
+            get
+            {
+                if (ins == null)
+                {
                     ins = new SequenceManager();
                 }
                 return ins;
             }
         }
 
-        public enum SequenceStatus {
+        public enum SequenceStatus
+        {
             None,
             Idle,
             Recording,
@@ -65,7 +69,8 @@ namespace AndroidRecorder
             // loop終了処理
             StopRecording();
             SetSequenceStatus(SequenceStatus.Idle);
-            while (m_recordeQueue.Count > 0) {
+            while (m_recordeQueue.Count > 0)
+            {
                 RecordingManager recording = m_recordeQueue.Dequeue();
                 recording.ExitRecording();
             }
@@ -82,16 +87,17 @@ namespace AndroidRecorder
             // それはRecordingManagerが終了待ちに発行するやつでは
         }
 
-        private void SetSequenceStatus (SequenceStatus status)
+        private void SetSequenceStatus(SequenceStatus status)
         {
             m_status = status;
         }
 
-        private void SetCancellatioToken() {
+        private void SetCancellatioToken()
+        {
             m_cancellationTokenSource = new CancellationTokenSource();
         }
 
-        private void StartRecording ()
+        private void StartRecording()
         {
             RecordingManager recording = new RecordingManager();
             recording.StartRecording();
@@ -100,7 +106,8 @@ namespace AndroidRecorder
             Task.Run(() => AsyncRecordingWait(m_cancellationTokenSource.Token));
         }
 
-        private void ExitCurrentRecording() {
+        private void ExitCurrentRecording()
+        {
             m_recordeQueue.Dequeue().ExitRecording();
         }
 
@@ -113,9 +120,11 @@ namespace AndroidRecorder
         private async Task AsyncRecordingWait(CancellationToken token)
         {
             await Task.Delay(m_timeLimit * MILLISEC_MAGNIFICATION - RECORDING_TIME_BAFFER);
-            if (token.IsCancellationRequested) {
+            if (token.IsCancellationRequested)
+            {
                 return;
-            } else
+            }
+            else
             {
                 NextLoop();
             }

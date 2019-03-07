@@ -12,7 +12,7 @@ namespace AndroidRecorder
         {
             get
             {
-                if(ins == null)
+                if (ins == null)
                 {
                     ins = new WindowManager();
                 }
@@ -23,7 +23,7 @@ namespace AndroidRecorder
         private ViewController viewController;
         private PreferencesViewController preferencesViewController;
 
-        public void SetViewController (ViewController controller)
+        public void SetViewController(ViewController controller)
         {
             viewController = controller;
         }
