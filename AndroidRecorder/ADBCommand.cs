@@ -29,6 +29,14 @@ namespace AndroidRecorder
             }
         }
 
+        private static string adbPath
+        {
+            get
+            {
+                return ApplicationConfig.Instance.GetADBPath();
+            }
+        }
+
         const string ANDROID_PATH = "AndroidRecorder/";
 
         public static Process MakeAndroidMovieDir()
