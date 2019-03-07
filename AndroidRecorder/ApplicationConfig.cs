@@ -61,7 +61,6 @@ namespace AndroidRecorder
             {
                 SeveDefaultSettigs();
             }
-            SeveDefaultSettigs();
             RoadSettings();
         }
 
