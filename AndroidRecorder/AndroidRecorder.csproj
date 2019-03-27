@@ -92,6 +92,7 @@
       <DependentUpon>PreferencesViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="WindowManager.cs" />
+    <Compile Include="ScreenshotController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

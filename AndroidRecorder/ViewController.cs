@@ -51,6 +51,11 @@ namespace AndroidRecorder
             }
         }
 
+        partial void ScreenShotButton(NSObject sender)
+        {
+            ScreenshotController.Instance.Capture();
+        }
+
         private void RecordButtonAction()
         {
             if (sequenceManager.GetSequenceStatus() == SequenceManager.SequenceStatus.Idle)
