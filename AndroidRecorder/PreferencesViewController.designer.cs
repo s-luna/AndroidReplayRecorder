@@ -33,6 +33,9 @@ namespace AndroidRecorder
         [Outlet]
         AppKit.NSButton SaveSettingButtonOutlet { get; set; }
 
+        [Outlet]
+        AppKit.NSTextField ScreenshotPath { get; set; }
+
         [Action ("ResetSettingButton:")]
         partial void ResetSettingButton (Foundation.NSObject sender);
 
@@ -51,14 +54,19 @@ namespace AndroidRecorder
                 CacheDirField = null;
             }
 
+            if (PullWaitTimeField != null) {
+                PullWaitTimeField.Dispose ();
+                PullWaitTimeField = null;
+            }
+
             if (RecordingTimeField != null) {
                 RecordingTimeField.Dispose ();
                 RecordingTimeField = null;
             }
 
-            if (PullWaitTimeField != null) {
-                PullWaitTimeField.Dispose ();
-                PullWaitTimeField = null;
+            if (ResetSettingButtonOutlet != null) {
+                ResetSettingButtonOutlet.Dispose ();
+                ResetSettingButtonOutlet = null;
             }
 
             if (SaveDirField != null) {
@@ -71,9 +79,9 @@ namespace AndroidRecorder
                 SaveSettingButtonOutlet = null;
             }
 
-            if (ResetSettingButtonOutlet != null) {
-                ResetSettingButtonOutlet.Dispose ();
-                ResetSettingButtonOutlet = null;
+            if (ScreenshotPath != null) {
+                ScreenshotPath.Dispose ();
+                ScreenshotPath = null;
             }
         }
     }

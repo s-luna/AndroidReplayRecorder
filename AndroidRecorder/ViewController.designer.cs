@@ -9,7 +9,7 @@ using System.CodeDom.Compiler;
 
 namespace AndroidRecorder
 {
-    [Register("ViewController")]
+    [Register ("ViewController")]
     partial class ViewController
     {
         [Outlet]
@@ -18,23 +18,24 @@ namespace AndroidRecorder
         [Outlet]
         AppKit.NSButton SaveButtonOutlet { get; set; }
 
-        [Action("RecordButton:")]
-        partial void RecordButton(Foundation.NSObject sender);
+        [Action ("RecordButton:")]
+        partial void RecordButton (Foundation.NSObject sender);
 
-        [Action("SaveButton:")]
-        partial void SaveButton(Foundation.NSObject sender);
+        [Action ("SaveButton:")]
+        partial void SaveButton (Foundation.NSObject sender);
 
-        void ReleaseDesignerOutlets()
+        [Action ("ScreenShotButton:")]
+        partial void ScreenShotButton (Foundation.NSObject sender);
+        
+        void ReleaseDesignerOutlets ()
         {
-            if (RecordButtonOutlet != null)
-            {
-                RecordButtonOutlet.Dispose();
+            if (RecordButtonOutlet != null) {
+                RecordButtonOutlet.Dispose ();
                 RecordButtonOutlet = null;
             }
 
-            if (SaveButtonOutlet != null)
-            {
-                SaveButtonOutlet.Dispose();
+            if (SaveButtonOutlet != null) {
+                SaveButtonOutlet.Dispose ();
                 SaveButtonOutlet = null;
             }
         }
