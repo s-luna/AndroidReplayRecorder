@@ -27,6 +27,13 @@ namespace AndroidRecorder
                 return ApplicationConfig.Instance.GetHomePath();
             }
         }
+        string screenshotPath
+        {
+            get
+            {
+                return ApplicationConfig.Instance.GetScreenshotPath();
+            }
+        }
 
         public DataManager()
         {
@@ -38,6 +45,10 @@ namespace AndroidRecorder
             if (Directory.Exists($"{cachePath}") == false)
             {
                 Directory.CreateDirectory($"{cachePath}");
+            }
+            if (Directory.Exists($"{screenshotPath}") == false)
+            {
+                Directory.CreateDirectory($"{screenshotPath}");
             }
             cacheMovieNames = new Queue<string>();
             Clean();
