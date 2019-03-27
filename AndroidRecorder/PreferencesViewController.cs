@@ -35,6 +35,7 @@ namespace AndroidRecorder
                 AdbPathField.StringValue,
                 CacheDirField.StringValue,
                 SaveDirField.StringValue,
+                ScreenshotPath.StringValue,
                 RecordingTimeField.IntValue,
                 PullWaitTimeField.IntValue));
         }
@@ -51,6 +52,7 @@ namespace AndroidRecorder
             AdbPathField.StringValue = config.GetADBPath();
             CacheDirField.StringValue = config.GetCachePath();
             SaveDirField.StringValue = config.GetSavePath();
+            ScreenshotPath.StringValue = config.GetScreenshotPath();
             RecordingTimeField.IntValue = config.GetRecordingTime();
             PullWaitTimeField.IntValue = config.GetPullWaitTime();
         }
