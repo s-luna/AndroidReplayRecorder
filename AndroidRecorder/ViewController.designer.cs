@@ -18,6 +18,9 @@ namespace AndroidRecorder
         [Outlet]
         AppKit.NSButton SaveButtonOutlet { get; set; }
 
+        [Outlet]
+        AppKit.NSButton ScreenShotButtonOutlet { get; set; }
+
         [Action ("RecordButton:")]
         partial void RecordButton (Foundation.NSObject sender);
 
@@ -37,6 +40,11 @@ namespace AndroidRecorder
             if (SaveButtonOutlet != null) {
                 SaveButtonOutlet.Dispose ();
                 SaveButtonOutlet = null;
+            }
+
+            if (ScreenShotButtonOutlet != null) {
+                ScreenShotButtonOutlet.Dispose ();
+                ScreenShotButtonOutlet = null;
             }
         }
     }

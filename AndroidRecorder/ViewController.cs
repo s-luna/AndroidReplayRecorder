@@ -84,12 +84,16 @@ namespace AndroidRecorder
             }
             RecordButtonOutlet.Enabled = false;
             SaveButtonOutlet.Enabled = false;
+            ScreenShotButtonOutlet.Enabled = false;
         }
 
         public void EnableButton()
         {
             RecordButtonOutlet.Enabled = true;
             SaveButtonOutlet.Enabled = true;
+            ScreenShotButtonOutlet.Enabled = true;
+        }
+
         }
 
     }

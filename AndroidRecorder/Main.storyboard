@@ -152,6 +152,8 @@
                         <outlet property="RecordButtonOutlet" destination="LdF-o1-pSp" id="k3s-uL-qvi"/>
                         <outlet property="SaveButton" destination="F3z-Se-mFw" id="ITU-BM-9gP"/>
                         <outlet property="SaveButtonOutlet" destination="F3z-Se-mFw" id="Wwp-tY-ShP"/>
+                        <outlet property="ScreenShotButton" destination="Axb-pu-VI7" id="Xgb-m3-hiU"/>
+                        <outlet property="ScreenShotButtonOutlet" destination="Axb-pu-VI7" id="UQW-4E-vGR"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
