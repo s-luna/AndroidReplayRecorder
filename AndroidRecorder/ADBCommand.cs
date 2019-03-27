@@ -54,12 +54,12 @@ namespace AndroidRecorder
             return DoBashCommand.RunBashCommand($"kill {pid}");
         }
 
-        public static Process PullMovie(string fileName)
+        public static Process PullFile(string fileName)
         {
             return DoBashCommand.RunADBCommanc($"pull /sdcard/{ANDROID_PATH}{fileName} {cachePath}");
         }
 
-        public static Process RemoveMovie(string fileName)
+        public static Process RemoveFile(string fileName)
         {
             return DoBashCommand.RunADBCommanc($"shell rm /sdcard/{ANDROID_PATH}{fileName}");
         }
