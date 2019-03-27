@@ -37,11 +37,24 @@ namespace AndroidRecorder
             }
         }
 
+        private static string screenshotPath
+        {
+            get
+            {
+                return ApplicationConfig.Instance.GetScreenshotPath();
+            }
+        }
+
         const string ANDROID_PATH = "AndroidRecorder/";
 
         public static Process MakeAndroidMovieDir()
         {
             return DoBashCommand.RunADBCommanc($"shell mkdir /sdcard/{ANDROID_PATH}");
+        }
+
+        public static Process ScreenCapture(string fileName)
+        {
+            return DoBashCommand.RunADBCommanc($"shell screencap /sdcard/{ANDROID_PATH}{fileName}");
         }
 
         public static Process StartScreenRecord(string fileName)
@@ -54,12 +67,17 @@ namespace AndroidRecorder
             return DoBashCommand.RunBashCommand($"kill {pid}");
         }
 
-        public static Process PullMovie(string fileName)
+        public static Process PullMove(string fileName)
         {
             return DoBashCommand.RunADBCommanc($"pull /sdcard/{ANDROID_PATH}{fileName} {cachePath}");
         }
 
-        public static Process RemoveMovie(string fileName)
+        public static Process PullImage(string fileName)
+        {
+            return DoBashCommand.RunADBCommanc($"pull /sdcard/{ANDROID_PATH}{fileName} {screenshotPath}");
+        }
+
+        public static Process RemoveFile(string fileName)
         {
             return DoBashCommand.RunADBCommanc($"shell rm /sdcard/{ANDROID_PATH}{fileName}");
         }

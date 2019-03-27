@@ -51,6 +51,11 @@ namespace AndroidRecorder
             }
         }
 
+        partial void ScreenShotButton(NSObject sender)
+        {
+            ScreenshotController.Instance.Capture();
+        }
+
         private void RecordButtonAction()
         {
             if (sequenceManager.GetSequenceStatus() == SequenceManager.SequenceStatus.Idle)
@@ -84,12 +89,16 @@ namespace AndroidRecorder
             }
             RecordButtonOutlet.Enabled = false;
             SaveButtonOutlet.Enabled = false;
+            ScreenShotButtonOutlet.Enabled = false;
         }
 
         public void EnableButton()
         {
             RecordButtonOutlet.Enabled = true;
             SaveButtonOutlet.Enabled = true;
+            ScreenShotButtonOutlet.Enabled = true;
+        }
+
         }
 
     }
