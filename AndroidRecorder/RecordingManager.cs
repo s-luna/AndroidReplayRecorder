@@ -26,7 +26,7 @@ namespace AndroidRecorder
             // screenrecordをkillしてからファイルが動画として再生できるようになるまでラグがある
             int waitTime = ApplicationConfig.Instance.GetPullWaitTime();
             Thread.Sleep(waitTime);
-            Process process = ADBCommand.PullFile(m_fileName);
+            Process process = ADBCommand.PullMove(m_fileName);
             process.WaitForExit();
             RemoveMovie();
             DataManager.Instance.SetMovie($"{m_fileName}");
