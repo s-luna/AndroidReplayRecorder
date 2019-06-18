@@ -54,6 +54,7 @@ namespace AndroidRecorder
                 this.saveDir = saveDir;
                 this.recordingTime = recordingTime;
                 this.pullWaitTime = pullWaitTime;
+                this.saveImageDir = saveImageDir;
             }
         }
 
